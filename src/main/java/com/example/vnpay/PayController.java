@@ -11,13 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @RestController
-public class pay {
+public class PayController {
+
+	/*
+POST http://localhost:8080/create-pay/
+Content-Type: application/json
+
+{
+  "amount": "1000000",
+  "description": "thanh toan",
+  "bankCode": "NCB"
+}
+	 */
+
+
 
 	@PostMapping("create-pay")
 	public ResponseEntity<?> createPayment(@RequestBody PaymentDTO requestParams , HttpServletRequest request) throws IOException{
